@@ -88,7 +88,7 @@ require("vista/accesorios/error.php");
     {
         try{ 
         $usuario = new usuarios();
-        $rol = $usuario->listarRol()->get();
+        $rol = $usuario->listarRol()->get(); 
         $usuarios = $usuario->mostrar("id", $_GET["id"])->first2();
         
 

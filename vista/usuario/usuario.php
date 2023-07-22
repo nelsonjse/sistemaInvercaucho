@@ -97,7 +97,8 @@
                                     <ul class="nk-tb-actions gx-1">
                                     <ul class="link-list-opt no-bdr">
                                     <?php if($usuario->descripcion == "SuperUsuario"){ ?> 
-                                        <li><span class=" badge bg-primary mr-4 text-light">Administrador</span></li> 
+                                        
+                                    <li><a href="?pagina=usuarios/mostrar&id=<?=$usuario->id?>"><em class="icon ni ni-activity-round text-info"></em><span class="text-info">Actualizar </span></a></li>
                                     <?php } else {?>
                                     <li><a href="?pagina=usuarios/permisos&id=<?=$usuario->id?>"><em class="icon ni ni-activity-round text-dark"></em><span class="text-dark">Configurar </span></a></li>                                  
                                     <li><a href="?pagina=usuarios/mostrar&id=<?=$usuario->id?>"><em class="icon ni ni-activity-round text-info"></em><span class="text-info">Actualizar </span></a></li>

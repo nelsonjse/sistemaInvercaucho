@@ -70,6 +70,7 @@ function acceder(){
               $_SESSION['usuario'] = $datos->nombres;
               $_SESSION['rol'] = $datos->id_rol;
               
+              
               redirect("home");
               return false;
             }

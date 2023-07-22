@@ -13,7 +13,7 @@
     <form action="?pagina=inventarios/actualizar&id_inv=<?=$values->inventario->id_inv?>" method="POST" id="formulario" class="row">
         <div class="col-6">
             <label for="productos_id" class="col-6 col-form-label">Productos:</label>
-            <select name="productos_id" id="productos_id" class="form-control" selected="<?= $values->inventario->productos_id?>">
+            <select name="productos_id" id="productos_id" class="form-control" selected="<?= $values->inventario->productos_id?>"> 
                 <?php
                 foreach ($values->productos as $producto) { 
                 ?>
