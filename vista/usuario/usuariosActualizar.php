@@ -88,7 +88,7 @@
                 <div class="col-6">
                 <label for="id_rol" class="col-6 col-form-label">Rol</label>
                 <select name="id_rol" id="id_rol" class="form-control" selected="<?= $values->usuario->id_rol?>">
-               
+                
                     <?php 
                     foreach ($values->roles as $rol) {
                     ?>

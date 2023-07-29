@@ -53,8 +53,8 @@
                             </div>
                             <div class="dropdown-inner">
                                 <ul class="link-list">
-                                    <li><a href="?pagina=usuarios/perfil"><em class="icon ni ni-user-alt"></em><span>Ver perfil</span></a></li>
-                                    
+
+                                    <li><a href="?pagina=usuarios/perfil&id=<?=$_SESSION['id']?>"><em class="icon ni ni-user-alt"></em><span>Ver perfil </span></a></li>
                                  
                                     <li><a class="dark-switch" href="#"><em class="icon ni ni-moon"></em><span>Modo oscuro</span></a></li>
                                 </ul>

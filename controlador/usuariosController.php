@@ -57,9 +57,19 @@ require("vista/accesorios/error.php");
     }
 
     function usuariosPerfil(){
-        vista_limpia("usuario/perfil",[
-            "texto" => "Pagina en contruccion"
+        $usuario = new usuarios();
+        $rol = $usuario->listarRol()->get(); 
+        $usuarios = $usuario->mostrar("id", $_GET["id"])->first2();
+        
+
+        
+        vista("usuario/perfil", [ 
+            "roles" => $rol,
+            "usuario" => $usuarios,
         ]);
+
+
+       
     }
 
       function guardar() 
