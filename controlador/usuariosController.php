@@ -16,9 +16,10 @@ require("vista/accesorios/error.php");
     {
         $usuario = new usuarios();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
 
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
         try{
         $usuario = new usuarios();
         $usuarios = $usuario->listar()->get(); 
@@ -41,9 +42,10 @@ require("vista/accesorios/error.php");
     {
         $usuario = new usuarios();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
 
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
         $usuario = new usuarios();
         $rol = $usuario->listarRol()->get();
         vista("usuario/usuarioGuardar", [

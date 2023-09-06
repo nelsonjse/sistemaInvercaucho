@@ -31,17 +31,20 @@
                                 <div class="nk-tb-item">
                                 
                                 <div class="nk-tb-col">
+
                                 
-                               
-                                        <div class="user-card">
-                                            <div class="custom-control custom-switch">
-                                            <div class="user-info">
-                                                <input type="checkbox" class="custom-control-input" id="<?=$permiso->id?>" name="permisos[]" value="<?=$permiso->id?>" <?php echo isset($values->asignados->{$permiso->id}) ? 'checked' : '' ?>>
-                                                <label class="custom-control-label" for="<?=$permiso->id?>"><span class="tb-lead">  <b><?php echo $permiso->permiso?></b> </span></label>
+                                <div class="nk-tb-col tb-col-mb">
+                                <input type="checkbox" class="custom-control-input" id="<?=$permiso->id?>" name="permisos[]" value="<?=$permiso->id?>" <?php echo isset($values->asignados->{$permiso->id}) ? 'checked' : '' ?>>
+                                <label class="custom-control-label" for="<?=$permiso->id?>"><span class="tb-lead">  <b><?php echo $permiso->permiso?></b> </span></label>
                                                 
-                                            </div>
-                                            </div> 
-                                        </div>
+                                </div>
+                                <div class="user-card">
+                                <div class="custom-control custom-switch">
+                                <div class="user-info">
+                                               
+                                </div>
+                                </div> 
+                                </div>
                                     
                                 </div>
                                 

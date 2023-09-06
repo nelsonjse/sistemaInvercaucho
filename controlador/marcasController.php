@@ -13,9 +13,10 @@ require("vista/accesorios/error.php");
 
         $marca = new marcas();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $marca->verificarPermiso($id_user, 'productos')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         try{
         $marca = new marcas();
         $marcas = $marca->listar()->get(); 
@@ -39,9 +40,10 @@ require("vista/accesorios/error.php");
 
         $marca = new marcas();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $marca->verificarPermiso($id_user, 'productos')->get();  
     
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
         vista("marcas/marcasGuardar", [
             "texto" => "Guardar",
         ]);

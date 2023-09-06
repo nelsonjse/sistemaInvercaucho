@@ -14,9 +14,10 @@ function listar(){
 
     $despacho = new despachos();
     $id_user = $_SESSION['id'];
+    $id_rol = $_SESSION['rol'];
     $verificar = $despacho->verificarPermiso($id_user, 'despacho')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         $inventario = new inventarios();
         $inventarios = $inventario->listar()->get();
         $despacho = new despachos();
@@ -51,9 +52,10 @@ function listar(){
     function detalles(){
         $despacho = new despachos();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $despacho->verificarPermiso($id_user, 'despacho')->get(); 
     
-        if(!empty($verificar)){
+        if(!empty($verificar || $id_rol == 2)){
         $despacho = new despachos();
         if (!isset($_GET["id"])) {alerta("Id no existe"); redirect("despachos");}
         $despachos = $despacho->detalles("id", $_GET["id"])->first()->get();
@@ -86,9 +88,10 @@ function listar(){
 function crear(){
     $despacho = new despachos();
     $id_user = $_SESSION['id'];
+    $id_rol = $_SESSION['rol'];
     $verificar = $despacho->verificarPermiso($id_user, 'despacho')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
     $inventario = new inventarios();
     $despacho = new despachos();
     $despachos = $despacho->listar()->get();

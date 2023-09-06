@@ -122,6 +122,9 @@
                             </ul>
                         </li>
                         <li class="nk-menu-item">
+                            <a href="?pagina=bitacora"><span class="nk-menu-text ">Bitacora</span></a>
+                        </li>
+                        <li class="nk-menu-item">
                             <a href="?pagina=ayuda"><span class="nk-menu-text ">Ayuda del sistema</span></a>
                         </li>
                         <li class="nk-menu-item">

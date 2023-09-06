@@ -290,6 +290,10 @@
         "controlador" => "ayuda",
         "metodo" => "ayuda",
      ],
+     "bitacora" => [
+        "controlador" => "bitacora",
+        "metodo" => "bitacora",
+     ],
  ];
 
  function redirect($URL="principal"){ echo "<script> window.location.href='?pagina=".$URL."'; </script>"; }

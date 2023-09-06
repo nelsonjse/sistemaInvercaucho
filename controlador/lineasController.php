@@ -10,9 +10,10 @@ require("vista/accesorios/error.php");
     {
     $linea = new lineas();
     $id_user = $_SESSION['id'];
+    $id_rol = $_SESSION['rol'];
     $verificar = $linea->verificarPermiso($id_user, 'productos')->get();  
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         try{
         $linea = new lineas();
         $lineas = $linea->listar()->get();
@@ -36,9 +37,10 @@ require("vista/accesorios/error.php");
     {
         $linea = new lineas();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $linea->verificarPermiso($id_user, 'productos')->get();  
     
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
         vista("lineaProducto/lineaGuardar", [
             "texto" => "Guardar",
         ]);

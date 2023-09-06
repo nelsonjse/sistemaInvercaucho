@@ -9,9 +9,10 @@ require("vista/accesorios/error.php");
     {
     $inventario = new inventarios();
     $id_user = $_SESSION['id'];
+    $id_rol = $_SESSION['rol'];
     $verificar = $inventario->verificarPermiso($id_user, 'inventario')->get();   
   
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         try{
             $inventario = new inventarios();
             $inventarios = $inventario->listar()->get();            
@@ -35,8 +36,9 @@ require("vista/accesorios/error.php");
 
         $inventario = new inventarios();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $inventario->verificarPermiso($id_user, 'inventario')->get();
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
 
             $inventario = new inventarios();
             $productos = $inventario->listarProductos()->get();        

@@ -8,9 +8,10 @@ require("vista/accesorios/error.php");
     {
         $vehiculo = new vehiculos();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $vehiculo->verificarPermiso($id_user, 'productos')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         try{
         $vehiculo = new vehiculos();
         $vehiculos = $vehiculo->listar()->get();
@@ -32,9 +33,10 @@ require("vista/accesorios/error.php");
     {
         $vehiculo = new vehiculos();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $vehiculo->verificarPermiso($id_user, 'productos')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
         vista("tipoVehiculo/vehiculosGuardar", [
             "texto" => "Guardar",
         ]);

@@ -154,7 +154,26 @@ else if($vista == "Acceso Denegado"){
     })
   
   </script>";
-} 
+} else if($vista == "bitacora"){
+  echo "<script>
+  Swal.fire({
+      icon: 'error',
+      title: 'Ocurrio un error mostrar bitacora',
+      text: '',
+      
+      showDenyButton: true,
+      
+      confirmButtonText: 'ok',
+      
+    }).then((result) => {
+      
+      if (result.isConfirmed) {
+        window.location='?pagina=home'
+      }
+    })
+  
+  </script>";
+}
 
 
     

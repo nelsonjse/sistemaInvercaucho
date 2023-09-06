@@ -25,6 +25,9 @@ function login(){
  return true;
 }
 
+
+  
+
 function acceder(){ 
   require("modelo/bd.php");
   require("vista/autorizacion/login.php");
@@ -55,46 +58,83 @@ function acceder(){
             die();
             }
 
-          if ($datos->id_rol==1) {
-              
             $_SESSION['id'] = $datos->id;
             $_SESSION['usuario'] = $datos->nombres;
             $_SESSION['rol'] = $datos->id_rol;
+
             
             
+           
+            $sql ="INSERT INTO registro (idUsuario, fechaEntrada, horaEntrada) VALUES ($datos->id, NOW(), NOW())";
+            $stmt = $conexion->prepare($sql);             
+            $stmt->execute();
+            
+
+            $sql = $conexion->query("SELECT * FROM registro ORDER BY horaEntrada DESC
+            LIMIT 1;");
+            $datos2 = $sql->fetch(PDO::FETCH_OBJ);
+            
+            $_SESSION['idRegistroIniciado'] = $datos2->idRegistro;
+
             redirect("home");
+            
             return false;
-            }
-          if($datos->id_rol==2){
-              $_SESSION['id'] = $datos->id;
-              $_SESSION['usuario'] = $datos->nombres;
-              $_SESSION['rol'] = $datos->id_rol;
+            
+
+          // if ($datos->id_rol==1) {
+              
+          //   $_SESSION['id'] = $datos->id;
+          //   $_SESSION['usuario'] = $datos->nombres;
+          //   $_SESSION['rol'] = $datos->id_rol;
+            
+            
+          //   redirect("home");
+          //   return false;
+          //   }
+          // if($datos->id_rol==2){
+          //     $_SESSION['id'] = $datos->id;
+          //     $_SESSION['usuario'] = $datos->nombres;
+          //     $_SESSION['rol'] = $datos->id_rol;
               
               
-              redirect("home");
-              return false;
-            }
-            if($datos->id_rol==3){
-              $_SESSION['id'] = $datos->id;
-              $_SESSION['usuario'] = $datos->nombres;
-              $_SESSION['rol'] = $datos->id_rol;
+          //     redirect("home");
+          //     return false;
+          //   }
+          //   if($datos->id_rol==3){
+          //     $_SESSION['id'] = $datos->id;
+          //     $_SESSION['usuario'] = $datos->nombres;
+          //     $_SESSION['rol'] = $datos->id_rol;
               
-              redirect("home");
-              return false;
-            }
+          //     redirect("home");
+          //     return false;
+          //   }
          
           }
           
         }
       
     
-
+       
 
 function logout(){
-  // session_start();
+  require("modelo/bd.php");
+  
   if(isset($_SESSION["id"])){
+
+    $bd = new bd();
+    $conexion = $bd->conexion();
+    
+    
+    
+    $idRegistroIniciado = $_SESSION['idRegistroIniciado'];
+  
+    $sql = "UPDATE registro SET fechaSalida = NOW(), horaSalida = NOW() WHERE idRegistro = $idRegistroIniciado";
+    $stmt = $conexion->prepare($sql);
+    $stmt->execute();
+    
     session_destroy();
     redirect("principal");
+    
   }else{
     alerta("No tienes una sesion activa");
     redirect("principal");

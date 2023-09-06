@@ -10,9 +10,10 @@ require("vista/accesorios/error.php");
 
         $producto = new productos();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $producto->verificarPermiso($id_user, 'productos')->get(); 
 
-    if(!empty($verificar)){
+    if(!empty($verificar) || $id_rol == 2){
             $producto = new productos();
             $productos = $producto->listar()->get();
             vista("productos/producto", [
@@ -29,8 +30,9 @@ require("vista/accesorios/error.php");
     {
         $producto = new productos();
         $id_user = $_SESSION['id'];
+        $id_rol = $_SESSION['rol'];
         $verificar = $producto->verificarPermiso($id_user, 'productos')->get(); 
-        if(!empty($verificar)){
+        if(!empty($verificar) || $id_rol == 2){
             $producto = new productos();
             $marcas = $producto->listarMarcas()->get();
             $lineas = $producto->listarLineas()->get();

@@ -2,7 +2,7 @@
         <div class="nk-sidebar-menu" data-simplebar>
             <ul class="nk-menu">
                 <li class="nk-menu-heading">               
-                <p><small> Tipo: Administrador</small> <br/>        
+                     
                 <small> Bienvenido <?php echo  $_SESSION['usuario'] ?> </small> </p>
                     
                     <h6 class="overline-title text-primary-alt">Sistema de Inventario </h6>
