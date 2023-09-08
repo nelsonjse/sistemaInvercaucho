@@ -14,7 +14,7 @@
         <div class="form-row">
             
             
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="linea_productos" class="col-6 col-form-label">Linea de Producto:</label>
                 <select name="linea_productos_id" id="linea_productos_id" class="form-control">
                     <?php
@@ -26,7 +26,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="marca" class="col-6 col-form-label">Marca:</label>
 
                 <select name="marcas_id" id="marcas_id" class="form-control">
@@ -39,7 +39,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="marca" class="col-6 col-form-label">Tipo de Vehiculo:</label>
 
                 <select name="tipo_vehiculos_id" id="tipo_vehiculos_id" class="form-control">
@@ -52,7 +52,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="descripcion" class="col-6 col-form-label">Descripcion:</label>
                 <input type="text"  class="form-control" name="descripcion" id="descripcion" placeholder="Ingresar descripcion">
                 <span id="responseDescripcion" style="color: red;"></span>

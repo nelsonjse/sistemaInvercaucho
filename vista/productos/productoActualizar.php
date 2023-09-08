@@ -14,7 +14,7 @@
         <div class="form-row">
            
            
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="linea_productos" class="col-6 col-form-label">Linea de Producto:</label>
                 <select name="linea_productos_id" id="linea_productos_id" class="form-control" selected="<?=$values->producto->linea_productos_id?>">
                     <?php
@@ -26,7 +26,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="marca" class="col-6 col-form-label">Marca:</label>
 
                 <select name="marcas_id" id="marcas_id" class="form-control" selected="<?=$values->producto->marcas_id?>">
@@ -39,7 +39,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="marca" class="col-6 col-form-label">Tipo de Vehiculo:</label>
 
                 <select name="tipo_vehiculos_id" id="tipo_vehiculos_id" class="form-control" selected="<?=$values->producto->tipo_vehiculos_id?>">
@@ -52,7 +52,7 @@
                     ?>
                 </select>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <label for="descripcion" class="col-6 col-form-label">Descripcion:</label>
                 <input type="text"  class="form-control" id="descripcion" name="descripcion" value="<?=$values->producto->descripcion?>" placeholder="Ingresar descripcion">
                 <span id="responseDescripcion" style="color: red;"></span>
@@ -61,7 +61,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col">
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <button type="submit" class="btn btn-primary" name="accion" value="agregar">Actualizar</button>
                 <a href="?pagina=productos" type="button" class="btn btn-danger" name="accion" value="Cancelar">Volver a Lista</a>
                 <p id="mensaje" style="color: red;"></p>
