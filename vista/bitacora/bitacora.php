@@ -30,8 +30,17 @@
             echo "<td>" . $registro->nombres . "</td>";
             echo "<td>" . $registro->fechaEntrada . "</td>";
             echo "<td>" . $registro->horaEntrada . "</td>";
-            echo "<td>" . $registro->fechaSalida . "</td>";
-            echo "<td>" . $registro->horaSalida . "</td>";
+            if($registro->fechaSalida == "0000-00-00"){
+                echo "<td>" . "En Sesion" . "</td>";
+            }else{
+                echo "<td>" . $registro->fechaSalida . "</td>";
+            }
+            if($registro->horaSalida == "00:00:00"){
+                echo "<td>" . "En Sesion" . "</td>";
+            }else{
+                echo "<td>" . $registro->horaSalida . "</td>";
+            }
+            
             
             echo "</tr>";
         }

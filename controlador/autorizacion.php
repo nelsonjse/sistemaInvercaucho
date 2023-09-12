@@ -70,9 +70,8 @@ function acceder(){
             $stmt->execute();
             
 
-            $sql = $conexion->query("SELECT * FROM registro ORDER BY horaEntrada DESC
-            LIMIT 1;");
-            $datos2 = $sql->fetch(PDO::FETCH_OBJ);
+            $sql2 = $conexion->query("SELECT * FROM registro ORDER BY idRegistro DESC LIMIT 1;");
+            $datos2 = $sql2->fetch(PDO::FETCH_OBJ);
             
             $_SESSION['idRegistroIniciado'] = $datos2->idRegistro;
 
@@ -81,33 +80,7 @@ function acceder(){
             return false;
             
 
-          // if ($datos->id_rol==1) {
-              
-          //   $_SESSION['id'] = $datos->id;
-          //   $_SESSION['usuario'] = $datos->nombres;
-          //   $_SESSION['rol'] = $datos->id_rol;
-            
-            
-          //   redirect("home");
-          //   return false;
-          //   }
-          // if($datos->id_rol==2){
-          //     $_SESSION['id'] = $datos->id;
-          //     $_SESSION['usuario'] = $datos->nombres;
-          //     $_SESSION['rol'] = $datos->id_rol;
-              
-              
-          //     redirect("home");
-          //     return false;
-          //   }
-          //   if($datos->id_rol==3){
-          //     $_SESSION['id'] = $datos->id;
-          //     $_SESSION['usuario'] = $datos->nombres;
-          //     $_SESSION['rol'] = $datos->id_rol;
-              
-          //     redirect("home");
-          //     return false;
-          //   }
+          
          
           }
           
@@ -133,6 +106,7 @@ function logout(){
     $stmt->execute();
     
     session_destroy();
+    
     redirect("principal");
     
   }else{
