@@ -3,9 +3,9 @@
             <ul class="nk-menu">
                 <li class="nk-menu-heading">               
                  
-                <small> Bienvenido <?php echo  $_SESSION['usuario'] ?> </small> </p>
+                <small> BIENVENIDO <?php echo  $_SESSION['usuario'] ?> </small> </p>
                     
-                    <h6 class="overline-title text-primary-alt">Sistema de Facturacion </h6>
+                    <h6 class="overline-title text-primary-alt">Sistema de inventario y Facturacion </h6>
                 </li><!-- TITULO DEL MENU -->
               
                 <li class="nk-menu-item has-sub">
