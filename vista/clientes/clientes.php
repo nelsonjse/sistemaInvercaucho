@@ -2,7 +2,7 @@
     <div class="nk-block-head">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">clientes222</h3>
+                <h3 class="nk-block-title page-title">Clientes</h3>
                 <div class="nk-block-des text-soft">
                     <p>Tienes <?=count($values->clientes) ?> clientes. </p>
                 </div>
