@@ -13,7 +13,7 @@
                     <div class="toggle-expand-content" data-content="pageMenu">
                         <ul class="nk-block-tools g-3">
                                 <div class="drodown">
-                                    <a href="?pagina=proveedores/crear" class=" btn btn-icon btn-primary" ><em class="icon ni ni-plus"></em></a>
+                                    <a href="?pagina=clientes/crear" class=" btn btn-icon btn-primary" ><em class="icon ni ni-plus"></em></a>
                                    
                                 </div>
                             </li>

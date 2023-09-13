@@ -114,7 +114,7 @@ date_default_timezone_set('America/Caracas');
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar cliente</a>
+                                <button type="button" class="btn btn-secondary"><a href="?pagina=clientes/crear"><span class="nk-menu-text">Registrar cliente</span></a></button>
                             </div>
                         </div>
                     </div>
