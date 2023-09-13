@@ -1,6 +1,7 @@
 <?php
 
 require("modelo/despachos.php");
+require("modelo/cliente.php");
 require("modelo/productos.php");
 require("modelo/marcas.php");
 require("modelo/inventario.php");
@@ -94,10 +95,13 @@ function crear(){
     if(!empty($verificar) || $id_rol == 2){
     $inventario = new inventarios();
     $despacho = new despachos();
+    $cliente = new cliente();
     $despachos = $despacho->listar()->get();
+    $clientes = $cliente->listar()->get();
 
     vista("despacho/despachoCrear", [
         "productos" => $inventario->listar()->get(),
+        "clientes" => $cliente->listar()->get(),
         "despachos" => $despachos,
     ]);
 }else{
@@ -113,9 +117,9 @@ function guardar() {
     $inventario = new inventarios();
 
     $POST = json_decode(file_get_contents('php://input'));
-
     $orden_id = $despacho->guardar([
         "usuario" => $POST->usuario,
+        "cliente_fk"=>$POST->clientId,
     ]);
 
     if (!$orden_id) {

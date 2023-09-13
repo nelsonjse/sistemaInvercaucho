@@ -41,11 +41,16 @@ date_default_timezone_set('America/Caracas');
             <div class="invoice-head">
                 <div class="invoice-contact">
                     <span class="overline-title">Generado por</span>
-                    <div class="invoice-contact-info">
-                        <h4 class="title">Usuario <?php echo $_SESSION['usuario'] ?></h4>
+                    <div class="invoice-contact-info" >
+                        <h5 class="title">Usuario <?php echo $_SESSION['usuario'] ?></h5>
                         <ul class="list-plain">
                             <li><em class="icon ni ni-map-pin-fill"></em><span> Av. Florencio Jiménez, km 8½ oeste de Barquisimeto<br>Sector villa de nazareno.</span></li>
                             <li><em class="icon ni ni-call-fill"></em><span>+58 414-2185589</span></li>
+                            <hr class="hr" />
+                            <div id="contenedor_datos_cliente" >
+                          
+                            </div>
+
                         </ul>
                     </div>
                 </div>
@@ -61,8 +66,12 @@ date_default_timezone_set('America/Caracas');
 
             <div class="invoice-bills">
                 <div id="formulario">
+                
                     <div class="row justify-content-end align-items-center p-3">
-                        <button type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#exampleModalLong">
+                    <button type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#modalSelectClient">
+                            <em class="icon ni ni-plus mr-1"></em> Agregar cliente
+                        </button>
+                        <button type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#modalSelectProduct">
                             <em class="icon ni ni-plus mr-1"></em> Agregar producto
                         </button>
                     </div>
@@ -72,7 +81,7 @@ date_default_timezone_set('America/Caracas');
                     <button disabled type="button" onclick="agregarProducto_bd()" title="Guardar cambios de la orden y aprobar despacho" class="btn btn-success ml-1">Despachar orden</button>
                     <button type="button" onclick=" window.location.href='?pagina=despachos'" title="Deshacer los cambios realizados y volver al listado" class="btn btn-danger mx-1">Anular</button>
                 </div>
-                <div class="modal fade" data-backdrop="static" keyboard="false" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal fade" data-backdrop="static" keyboard="false" id="modalSelectProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -87,6 +96,25 @@ date_default_timezone_set('America/Caracas');
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Actualizar productos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" data-backdrop="static" keyboard="false" id="modalSelectClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Clientes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="outline: none;">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <?php include "./vista/despacho/componentes/tablaClientes.php" ?>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Agregar cliente</a>
                             </div>
                         </div>
                     </div>

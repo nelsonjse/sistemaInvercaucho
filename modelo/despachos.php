@@ -19,7 +19,7 @@ class despachos extends bd {
     }
     public function guardar($data){
         $conexion = $this->conexion();
-        $conexion->query("INSERT INTO `orden_despachos` (`id`, `estado`,`usuario`) VALUES (NULL, 'aprobado', '".$data["usuario"]."');");
+        $conexion->query("INSERT INTO `orden_despachos` (`id`, `estado`,`usuario`,`cliente_fk`) VALUES (NULL, 'aprobado', '".$data["usuario"]."','".$data["cliente_fk"]."');");
         
         $last_id = $conexion->lastInsertId();
         return $last_id;

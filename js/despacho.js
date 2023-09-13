@@ -40,6 +40,30 @@ const setCantidadProducto =(id)=>{
     setStorage("orden", {...orden, productos: temp});
     
 }
+  window.addEventListener("actualizar_datos_cliente", (e) => {
+    console.log("hola",e.detail)
+    const dataClient = document.getElementById("contenedor_datos_cliente");
+        dataClient.innerHTML = `
+        <h5><em class="title"></em><span>Datos del cliente:</span></h5>
+        <li><em class="icon ni ni-user"></em><span>cliente :${e.detail.nombre}</span></li>
+        <li><em class="icon ni ni-eye"></em><span>rif :${e.detail.rif}</span></li>
+        <li><em class="icon ni ni-map"></em><span>direccion : ${e.detail.direccion}</span></li>
+        `;
+  
+    });
+const agregarCliente = (client) => {
+    const data = {
+        id : client.id,
+        nombre : client.nombre,
+        rif: client.rif,
+        direccion: client.direccion,
+    }
+    setStorage("cliente",data);
+
+    window.dispatchEvent(new CustomEvent('actualizar_datos_cliente',{"detail":data}));
+
+
+}
 
 const agregarProducto2 = (prod) => {
 
@@ -149,15 +173,16 @@ const removerProducto2 = (prod) => {
 const agregarProducto_bd = async (id_orden) => {
 
     let orden = getStorage("orden");
+    let client = getStorage("cliente");
     
     if (orden.length < 1) {
         alert("Agrege almenos un producto a la orden!!!");
         return;
     }
-
+console.log("holaaaaa",client.id);
     const { code, errors, message } = await fetch("?pagina=despachos/guardar", {
         method: "POST",
-        body: JSON.stringify(orden),
+        body: JSON.stringify({...orden, clientId: client.id}),
     })
     .then(async res => res.json()).catch(err => err);
 

@@ -1,6 +1,5 @@
 <?php
-
- require("modelo/bd.php");
+if(!class_exists("bd")) require("modelo/bd.php");
 
 
  class cliente extends bd {
