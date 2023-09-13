@@ -112,6 +112,31 @@
          "controlador" => "proveedoresController",
          "metodo" => "eliminar",
      ],
+     //clientes
+     "clientes" => [
+        "controlador" => "clienteController",
+        "metodo" => "listar",
+    ],
+    "clientes/crear" => [
+        "controlador" => "clienteController",
+        "metodo" => "crear",
+    ],
+    "clientes/guardar" => [
+        "controlador" => "clienteController",
+        "metodo" => "guardar",
+    ],
+    "clientes/mostrar" => [
+        "controlador" => "clienteController",
+        "metodo" => "mostrar",
+    ],
+    "clientes/actualizar" => [
+        "controlador" => "clienteController",
+        "metodo" => "actualizar",
+    ],
+    "clientes/eliminar" => [
+        "controlador" => "clienteController",
+        "metodo" => "eliminar",
+    ],
     // Linea de producto
 
      "lineas" => [

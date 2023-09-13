@@ -91,6 +91,21 @@
 
                 <li class="nk-menu-item has-sub">
                     <a href="#" class="nk-menu-link nk-menu-toggle">
+                        <span class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span>
+                        <span class="nk-menu-text">Gestionar clientes</span>
+                    </a>
+                    <ul class="nk-menu-sub">
+                        <li class="nk-menu-item">
+                            <a href="?pagina=clientes/crear"><span class="nk-menu-text">Registrar cliente</span></a>
+                        </li>
+                        <li class="nk-menu-item">
+                            <a href="?pagina=clientes"><span class="nk-menu-text">Listar cliente</span></a>
+                        </li>
+                    </ul><!-- .nk-menu-sub -->
+                </li><!-- .nk-menu-item -->
+
+                <li class="nk-menu-item has-sub">
+                    <a href="#" class="nk-menu-link nk-menu-toggle">
                         <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
                         <span class="nk-menu-text">Gestionar Despacho</span>
                     </a>
