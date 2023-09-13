@@ -2,7 +2,7 @@
     <div class="nk-block-head">
         <div class="nk-block-between">
             <div class="nk-block-head-content">
-                <h3 class="nk-block-title page-title">clientes222</h3>
+                <h3 class="nk-block-title page-title">Clientes</h3>
                 <div class="nk-block-des text-soft">
                     <p>Tienes <?=count($values->clientes) ?> clientes. </p>
                 </div>
@@ -13,7 +13,7 @@
                     <div class="toggle-expand-content" data-content="pageMenu">
                         <ul class="nk-block-tools g-3">
                                 <div class="drodown">
-                                    <a href="?pagina=proveedores/crear" class=" btn btn-icon btn-primary" ><em class="icon ni ni-plus"></em></a>
+                                    <a href="?pagina=clientes/crear" class=" btn btn-icon btn-primary" ><em class="icon ni ni-plus"></em></a>
                                    
                                 </div>
                             </li>
