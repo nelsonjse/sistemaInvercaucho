@@ -5,7 +5,7 @@
                  
                 <small> Bienvenido <?php echo  $_SESSION['usuario'] ?> </small> </p>
                     
-                    <h6 class="overline-title text-primary-alt">Sistema de Inventario </h6>
+                    <h6 class="overline-title text-primary-alt">Sistema de Inventario y Facturacion </h6>
                 </li><!-- TITULO DEL MENU -->
               
                 <li class="nk-menu-item has-sub">
