@@ -18,6 +18,9 @@
         <!-- Page Title  -->
         <title>Invercauchos</title>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
         <script src="vista/assets/js/sweetalert2.all.min.js"></script>
         <link rel="stylesheet" href="vista/assets/css/sweetalert2.min.css">

@@ -93,7 +93,11 @@
          return $this->data;
      }
 
-
+     public function first2() 
+     {
+         return empty($this->data) ? false : $this->data[0];
+     }
+     
      public function first(){
          return empty($this->data)?false:$this->data[0];
      }

@@ -74,9 +74,23 @@ require("vista/accesorios/error.php");
         try{
         $proveedor = new proveedor();
         $proveedor = $proveedor->mostrar("id", $_GET["id"])->first();
-        vista("proveedores/proveedorActualizar", [
-            "proveedor" => $proveedor,
-        ]);
+        
+        
+        // Crear un objeto con los datos del proveedor
+        $proveedores = [
+            "nombre" => $proveedor['nombres'],
+            "rif" => $proveedor['rif'],
+            "telefono" => $proveedor['telefono'],
+            "direccion" => $proveedor['direccion'],
+        ];
+
+        // Devuelve los datos del proveedor como un objeto JSON
+        echo json_encode($proveedores);
+
+
+        // vista("proveedores/proveedorActualizar", [
+        //     "proveedor" => $proveedor,
+        // ]);
     }catch(Exception $e){
             
         $mensaje = "error";   
@@ -84,26 +98,47 @@ require("vista/accesorios/error.php");
         }
     }
 
-      function actualizar()
-    {
-        try{
+    //   function actualizar()
+    // {
+    //     try{
+    //     $proveedor = new proveedor();       
+    //     $response = $proveedor->actualizar($_GET["id"], [
+    //         "nombres" => $_POST["nombre"],            
+    //         "rif" => $_POST["rif"],
+    //         "telefono" => $_POST["telefono"],
+    //         "direccion" => $_POST["direccion"],
+    //     ]);
+    //     redirect("proveedores");
+    // }catch(Exception $e){
+            
+    //     $mensaje = "error";   
+    //     error($mensaje);
+    //     }
+
+
+        
+    // }
+
+    function actualizar()
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
         $proveedor = new proveedor();       
-        $response = $proveedor->actualizar($_GET["id"], [
+        $response = $proveedor->actualizar($_POST["proveedor_id"], [
             "nombres" => $_POST["nombre"],            
             "rif" => $_POST["rif"],
             "telefono" => $_POST["telefono"],
             "direccion" => $_POST["direccion"],
         ]);
+        
         redirect("proveedores");
-    }catch(Exception $e){
-            
+    } else {
+        
         $mensaje = "error";   
         error($mensaje);
-        }
-
-
-        
     }
+}
+
 
       function eliminar()
     {
