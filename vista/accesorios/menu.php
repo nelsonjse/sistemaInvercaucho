@@ -3,7 +3,7 @@
             <ul class="nk-menu">
                 <li class="nk-menu-heading">               
                  
-                <small> BIENVENIDO <?php echo  $_SESSION['usuario'] ?> </small> </p>
+                <small> Bienvenido <?php echo  $_SESSION['usuario'] ?> </small> </p>
                     
                     <h6 class="overline-title text-primary-alt">Sistema de inventario y Facturacion </h6>
                 </li><!-- TITULO DEL MENU -->
