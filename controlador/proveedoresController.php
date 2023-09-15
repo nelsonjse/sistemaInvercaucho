@@ -73,8 +73,7 @@ require("vista/accesorios/error.php");
     {
         try{
         $proveedor = new proveedor();
-        $proveedor = $proveedor->mostrar("id", $_GET["id"])->first();
-        
+        $proveedor = $proveedor->mostrar("id", $_GET["id"])->first();        
         
         // Crear un objeto con los datos del proveedor
         $proveedores = [
@@ -83,11 +82,8 @@ require("vista/accesorios/error.php");
             "telefono" => $proveedor['telefono'],
             "direccion" => $proveedor['direccion'],
         ];
-
         // Devuelve los datos del proveedor como un objeto JSON
         echo json_encode($proveedores);
-
-
         // vista("proveedores/proveedorActualizar", [
         //     "proveedor" => $proveedor,
         // ]);

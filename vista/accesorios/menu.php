@@ -134,6 +134,9 @@
                                 <li class="nk-menu-item">
                                     <a href="?pagina=usuarios"><span class="nk-menu-text">Lista de Usuario</span></a>
                                 </li>
+                                <li class="nk-menu-item">
+                                    <a href="?pagina=roles"><span class="nk-menu-text">Gestionar Roles</span></a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nk-menu-item">

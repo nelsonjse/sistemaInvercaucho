@@ -37,6 +37,31 @@
         "controlador" => "usuariosController",
         "metodo" => "registrarPermiso",
     ],
+    // roles
+    "roles" => [
+        "controlador" => "rolesController",
+        "metodo" => "listar",
+    ],
+    "roles/crear" => [
+        "controlador" => "rolesController",
+        "metodo" => "crear",
+    ],
+    "roles/guardar" => [
+        "controlador" => "rolesController",
+        "metodo" => "guardar",
+    ],
+    "roles/mostrar" => [
+        "controlador" => "rolesController",
+        "metodo" => "mostrar",
+    ],
+    "roles/actualizar" => [
+        "controlador" => "rolesController",
+        "metodo" => "actualizar",
+    ],
+    "roles/eliminar" => [
+        "controlador" => "rolesController",
+        "metodo" => "eliminar",
+    ],
     // productos
      "productos" => [
          "controlador" => "productosController",

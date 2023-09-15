@@ -13,10 +13,13 @@
                     <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                     <div class="toggle-expand-content" data-content="pageMenu">
                         <ul class="nk-block-tools g-3">
-                                <div class="drodown">
+                                <div class="drodown mt-2 mr-4">
                                     <!-- <a href="?pagina=proveedores/crear" class=" btn btn-icon btn-primary" ><em class="icon ni ni-plus"></em></a> -->
-                                   
-<a id="openModalGuardar" type="button" class="btn btn-info text-white" name="accion" value="agregar"><em class="icon ni ni-plus"></em></a>
+                                    <a class="link-guardar" data-toggle="modal" data-target="#modalGuardar">
+                                        
+                                        <span class="btn btn-info text-white">Registrar Proveedor</span>
+                                    </a>            
+
                                 </div>
                             </li>
                         </ul>
@@ -30,7 +33,7 @@
         border-top: none;
         border-bottom: none;
     }
-</style>
+    </style>
     <div class="container">
         <h2>Lista de Datos</h2>
         <div class="table-responsive">
@@ -71,16 +74,16 @@
                     </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
-                </tbody>
-                <div>
-
-                </div>
+                </tbody>            
             </table>
-            <div class="text-align: center">
+        <div>
+    </div>
+</div>
+
+    <div class="text-align: center">
     <a href="?pagina=reporteProveedor" type="button" class="btn btn-info" name="accion" value="reporte">Reporte</a>
     </div>   
-        </div>
-    </div>
+
     <?php if (!isset($values->proveedores[0])): ?>
         <div class="nk-tb-item text-center w-100">
             No hay proveedores para mostrar
@@ -89,77 +92,71 @@
 
 
 
-<a id="openModalGuardar" type="button" class="btn btn-info text-white" name="accion" value="agregar">Agregar</a>
+<!-- <a id="modalGuardar" type="button" class="btn btn-info text-white" name="accion" value="agregar">Agregar</a> -->
 
 
-    <!-- Modal -->
-    <div id="registrar" class="modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            
-            <div class="modal-content">
-                <!-- Aquí coloca tu formulario -->
-                
-                    <div class="nk-block-head">
-                        <div class="nk-block-between">
+    <!-- Modal Guardar -->
+    <div id="modalGuardar" class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="modalGuardarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">            
+            <div class="modal-content">                
+                <div class="nk-block-head">
+                    <div class="nk-block-between">
                         <div class="modal-header"  style="border: none;">
                             <div class="nk-block-head-content">
                                 <h2 class="nk-block-title page-title">Registrar Proveedor</h2>
                             </div>
-                        </div>
-                
-            </div>
-            <div class="modal-body">
-            <form action="?pagina=proveedores/guardar" method="POST" id="formulario" class="formulario"">
-                <div class="form-row">
-                    <div class="col-6">
-                        <label for="nombre" class="col-6 col-form-label">Nombre</label>
-                        <input type="text"  class="form-control" id="nombre" name="nombre" placeholder="Ingresar Nombre">
-                        <p class="text-danger" id="responseNombre"></p>
-                    </div>            
-                    <div class="col-6"> 
-                        <label for="rif" class="col-6 col-form-label">Rif</label>
-                        <input type="text"  class="form-control" id="rif" name="rif" placeholder="Ingresar Rif">
-                        <p class="text-danger" id="responseRif"></p>
+                        </div>                
                     </div>
-                    <div class="col-6">
-                        <label for="telefono" class="col-6 col-form-label">Telefono</label>
-                        <input type="text"  class="form-control" id="telefono" name="telefono" placeholder="Ingresar Telefono">
-                        <p class="text-danger" id="responseTelefono"></p>
-                    </div>
-                    <div class="col-6">
-                        <label for="direccion" class="col-6 col-form-label">Direccion</label>
-                        <input type="text"  class="form-control" id="direccion" name="direccion" placeholder="Ingresar Direccion">
-                        <p class="text-danger" id="responseDireccion"></p>
-                    </div>
+                </div>    
+                <div class="modal-body">
+                    <form action="?pagina=proveedores/guardar" method="POST" id="formulario" class="formulario"">
+                        <div class="form-row">
+                            <div class="col-6">
+                                <label for="nombre" class="col-6 col-form-label">Nombre</label>
+                                <input type="text"  class="form-control" id="nombre" name="nombre" placeholder="Ingresar Nombre">
+                                <p class="text-danger" id="responseNombre"></p>
+                            </div>            
+                            <div class="col-6"> 
+                                <label for="rif" class="col-6 col-form-label">Rif</label>
+                                <input type="text"  class="form-control" id="rif" name="rif" placeholder="Ingresar Rif">
+                                <p class="text-danger" id="responseRif"></p>
+                            </div>
+                            <div class="col-6">
+                                <label for="telefono" class="col-6 col-form-label">Telefono</label>
+                                <input type="text"  class="form-control" id="telefono" name="telefono" placeholder="Ingresar Telefono">
+                                <p class="text-danger" id="responseTelefono"></p>
+                            </div>
+                            <div class="col-6">
+                                <label for="direccion" class="col-6 col-form-label">Direccion</label>
+                                <input type="text"  class="form-control" id="direccion" name="direccion" placeholder="Ingresar Direccion">
+                                <p class="text-danger" id="responseDireccion"></p>
+                            </div>
 
+                        </div>                    
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-primary" name="accion" value="agregar">Agregar</button>
+                                <button type="button" id="closeModalBtn" class="CerrarModal btn btn-danger" name="accion" value="Cancelar">Volver a Lista</button>
+                                <p class="text-danger" id="mensaje"></p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            
-                <br>
-                <div class="row">
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary" name="accion" value="agregar">Agregar</button>
-                        <button type="button" id="closeModalBtn" class="btn btn-danger" name="accion" value="Cancelar">Volver a Lista</button>
-                        <p class="text-danger" id="mensaje"></p>
-                    </div>
-                </div>
-            </form>
             </div>
         </div>
-    </div>
-
         <script type="text/javascript" src="js/proveedores.js"></script> 
+        </div>
     </div>
-    </div>                  
+</div>                  
 
 <!-- <a id="openModalActualizar" type="button" class="btn btn-info text-white" name="accion" value="actualizar">Actualizar</a> -->
 
 
 
 <div id="modal-actualizar" class="modal fade">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-            
-        <div class="modal-content">           
-            
+    <div class="modal-dialog modal-dialog-centered" role="document">            
+        <div class="modal-content"> 
             <div class="nk-block-head">
                 <div class="nk-block-between">
                     <div class="modal-header"  style="border: none;">
@@ -201,7 +198,7 @@
                         <div class="row">
                             <div class="col">
                                 <button type="submit" class="btn btn-primary" name="accion" value="actualizar">Actualizar</button>
-                                <button type="button" id="closeModalBtn2" class="btn btn-danger" name="accion" value="Cancelar">Volver a Lista</button>
+                                <button type="button" id="closeModalBtn2" class="CerrarModal2 btn btn-danger" name="accion" value="Cancelar">Volver a Lista</button>
                                 <p class="text-danger" id="mensaje"></p>
                             </div>
                         </div>
@@ -209,9 +206,10 @@
             </div>
         </div>
     </div>
+    
 </div>
 
-        <!-- <script type="text/javascript" src="js/proveedoresActualizar.js"></script>  -->
+        
     
   
 

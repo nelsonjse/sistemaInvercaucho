@@ -1,24 +1,11 @@
 
-// Obtener elementos del DOM
-// var openModalBtn = document.getElementById('openModalGuardar');
-// var closeModalBtn = document.getElementById('closeModalBtn');
-// var modal = document.getElementById('registrar');
+// var modal = document.getElementById('modal-actualizar');
 
-// // Mostrar el modal cuando se haga clic en el botón de abrir
-// openModalBtn.addEventListener('click', function() {
-//     modal.style.display = 'block';
+// window.addEventListener('click', function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = 'none';
+//     }
 // });
-
-// // Ocultar el modal cuando se haga clic en el botón de cerrar o en el fondo oscuro
-// closeModalBtn.addEventListener('click', function() {
-//     modal.style.display = 'none';
-// });
-
-window.addEventListener('click', function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-});
 
 
 $(document).ready(function () {
@@ -37,23 +24,21 @@ $(document).ready(function () {
     $('.link-actualizar').on('click', function (event) {
         
         event.preventDefault(); 
-        var proveedorId = $(this).data('proveedor-id'); 
-        $('#proveedor_id').val(proveedorId); 
+        var rolId = $(this).data('rol-id'); 
+        $('#rol_id').val(rolId); 
+        
         $.ajax({
-            url: '?pagina=proveedores/mostrar&id=' + proveedorId, 
+            url: '?pagina=roles/mostrar&id=' + rolId, 
             method: 'POST',
-            data: { id: proveedorId },
+            data: { id: rolId },
             dataType: 'json',
             success: function (data) {
                 
-                $('#formulario #nombre').val(data.nombre);
-                $('#formulario #rif').val(data.rif);
-                $('#formulario #telefono').val(data.telefono);
-                $('#formulario #direccion').val(data.direccion);
+                $('#formulario #descripcion').val(data.descripcion);
                 
             },
             error: function () {
-                alert('Error al obtener los datos del proveedor');
+                alert('Error al obtener los datos');
             }
         });
 
@@ -62,9 +47,6 @@ $(document).ready(function () {
         
        
     });
-
-
-    
 
     $('.CerrarModal2').on('click', function (event) {
         $('#modal-actualizar').modal('hide');
