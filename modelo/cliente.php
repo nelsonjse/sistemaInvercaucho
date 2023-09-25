@@ -28,7 +28,6 @@ if(!class_exists("bd")) require("modelo/bd.php");
     }
 
      public function mostrar($key, $value){
-        
          $conexion = $this->conexion();
          $sql = $conexion->prepare("SELECT * FROM `clientes` WHERE `$key` = $value");
          $sql->execute();
@@ -51,7 +50,7 @@ if(!class_exists("bd")) require("modelo/bd.php");
             }else{
 
                 $conexion = $this->conexion();
-                $this->data = $conexion->query("INSERT INTO `clientes` (`id`, `nombre`, `rif`, `direccion`) VALUES 
+                $this->data = $conexion->query("INSERT INTO `clientes` (`id_cliente`, `nombre`, `rif`, `direccion`) VALUES 
                 (NULL,
                 '".$data["nombres"]."',       
                 '".$data["rif"]."', 
@@ -61,12 +60,12 @@ if(!class_exists("bd")) require("modelo/bd.php");
         }
      }
     
-     public function eliminar($id){
+     public function eliminar($id_cliente){
         
          $conexion = $this->conexion();
         
-         $sql= $conexion->prepare("DELETE FROM clientes WHERE id=:id");
-         $sql->bindParam(':id', $id);
+         $sql= $conexion->prepare("DELETE FROM clientes WHERE id_cliente=:id_cliente");
+         $sql->bindParam(':id_cliente', $id_cliente);
          $response = $sql->execute();
          return $response;        
         

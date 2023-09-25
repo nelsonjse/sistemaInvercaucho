@@ -23,10 +23,15 @@ function listar(){
         $inventarios = $inventario->listar()->get();
         $despacho = new despachos();
         $despachos = $despacho->listar()->get();  
+        $cliente = new cliente();
+        $clientes = $cliente->listar()->get();
+        
 
         vista("despacho/despachos", [
             "despachos" => $despachos,
             "inventarios" => $inventarios,
+            "clientes"=>$clientes,
+
         ]);
         die();
     }else{
@@ -41,10 +46,13 @@ function listar(){
         $inventarios = $inventario->listar()->get();
         $despacho = new despachos();
         $despachos = $despacho->listar()->get();
+        $cliente = new cliente();
+        $clientes = $cliente->listar()->get();
         
         vista("despacho/despachos", [
             "despachos" => $despachos, 
             "inventarios" => $inventarios, 
+            "clientes"=>$clientes,
             "values" => "despachos"         
         ]);
         die();
@@ -52,6 +60,7 @@ function listar(){
 
     function detalles(){
         $despacho = new despachos();
+        $cliente = new cliente();
         $id_user = $_SESSION['id'];
         $id_rol = $_SESSION['rol'];
         $verificar = $despacho->verificarPermiso($id_user, 'despacho')->get(); 
@@ -60,15 +69,22 @@ function listar(){
         $despacho = new despachos();
         if (!isset($_GET["id"])) {alerta("Id no existe"); redirect("despachos");}
         $despachos = $despacho->detalles("id", $_GET["id"])->first()->get();
+
         if (!$despacho) {alerta("Producto no existe"); redirect("despachos"); }
-        //////
+    
+
         $response = $despachos['id'];
+        $FindDespacho = $despacho->mostrar(215)->get();
+        var_dump($response, "bandera");die();
+
         $productos = $despacho->productosDetalles($response)->get();
-        
-                
+        $clientes = $cliente->mostrar()->get();
+
         vista("despacho/despachoDetalles", [
             "despachos" => $despachos,             
-            "productos" => $productos   
+            "productos" => $productos,
+            "clientes" => $clientes
+           
         ]);
     }else{
         $mensaje = "Acceso Denegado";   

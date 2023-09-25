@@ -72,7 +72,7 @@ require("vista/accesorios/error.php");
     {
         try{
         $cliente = new cliente();
-        $cliente = $cliente->mostrar("id", $_GET["id"])->first();
+        $cliente = $cliente->mostrar("id_cliente", $_GET["id"])->first();
         vista("clientes/clientesActualizar", [
             "cliente" => $cliente,
         ]);
@@ -103,13 +103,13 @@ require("vista/accesorios/error.php");
 
       function eliminar()
     {
+        
         try{
         $cliente = new cliente();
-        $response = $cliente->mostrar("id", $_GET["id"])->first();       
+        $response = $cliente->mostrar("id_cliente", $_GET["id"])->first();  
         $response = $cliente->eliminar($_GET["id"]);
         redirect("clientes");
     }catch(Exception $e){
-            
         $mensaje = "error";   
         error($mensaje);
         }

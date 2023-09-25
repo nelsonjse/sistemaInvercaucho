@@ -34,6 +34,8 @@
                             <div class="nk-tb-col"><span class="sub-text">N° Despacho</span></div>
                             <div class="nk-tb-col tb-col-mb"><span class="sub-text">Estado</span></div>
                             <div class="nk-tb-col tb-col-mb"><span class="sub-text">Generado por</span></div>
+                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Cliente</span></div>
+                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Direccion</span></div>
                             <div class="nk-tb-col tb-col-mb"><span class="sub-text">Fecha</span></div>
                             <div class="nk-tb-col tb-col-mb"><span class="sub-text">Opciones</span></div>
                         </div>
@@ -54,7 +56,13 @@
                                     </div>
 
                                     <div class="nk-tb-col">
-                                    <span><?= $despacho->usuario?></span>
+                                    <span><?= $despacho->id?></span>
+                                    </div>
+                                    <div class="nk-tb-col">
+                                    <span><?= $despacho->nombre?></span>
+                                    </div>
+                                    <div class="nk-tb-col">
+                                    <span><?= $despacho->direccion?></span>
                                     </div>
                                     <div class="nk-tb-col">
                                     <span><?= $despacho->create_ad?></span>

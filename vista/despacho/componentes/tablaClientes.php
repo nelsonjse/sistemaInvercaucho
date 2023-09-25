@@ -15,7 +15,7 @@
                         <div class="nk-tb-col">
                             <div class="user-card">
                                 <div class="">
-                                    <span><?= $cliente->id ?></span>
+                                    <span><?= $cliente->id_cliente ?></span>
                                 </div>
                             </div>
                         </div>

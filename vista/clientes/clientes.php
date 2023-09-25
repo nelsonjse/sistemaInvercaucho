@@ -52,8 +52,8 @@
                         <td class="align-middle">
                             <ul class="nk-tb-actions gx-1">
                                 <ul class="link-list-opt no-bdr">
-                                    <li><a href="?pagina=clientes/mostrar&id=<?=$cliente->id?>"><em class="icon ni ni-activity-round text-info"></em><span class="text-info">Actualizar</span></a></li>
-                                    <li><a href="?pagina=clientes/eliminar&id=<?=$cliente->id?>"><em class="icon ni ni-trash text-danger"></em><span class="text-danger">Eliminar </span></a></li>
+                                    <li><a href="?pagina=clientes/mostrar&id=<?=$cliente->id_cliente?>"><em class="icon ni ni-activity-round text-info"></em><span class="text-info">Actualizar</span></a></li>
+                                    <li><a href="?pagina=clientes/eliminar&id=<?=$cliente->id_cliente?>"><em class="icon ni ni-trash text-danger"></em><span class="text-danger">Eliminar </span></a></li>
                                 </ul>                                    
                             </ul>
                         </td>

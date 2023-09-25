@@ -9,9 +9,9 @@ class despachos extends bd {
            
         $conexion = $this->conexion();
         if($id){
-            $response = $conexion->prepare("SELECT * FROM `orden_despachos` WHERE $campo = $id");
+            $response = $conexion->prepare("SELECT * FROM `orden_despachos`  WHERE $campo = $id");
         }else{
-            $response = $conexion->prepare("SELECT * FROM `orden_despachos`"); 
+            $response = $conexion->prepare("SELECT * FROM orden_despachos INNER JOIN clientes ON orden_despachos.cliente_fk = clientes.id_cliente;"); 
         }
         $response->execute();
         $this->data = $response->fetchAll();
