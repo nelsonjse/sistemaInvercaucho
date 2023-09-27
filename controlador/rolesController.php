@@ -106,7 +106,7 @@ require("vista/accesorios/error.php");
         
     // }
 
-    function actualizar()
+    function actualizar() 
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -116,7 +116,7 @@ require("vista/accesorios/error.php");
             
         ]);
         
-        redirect("roles");
+        
     } else {
         
         $mensaje = "error";   

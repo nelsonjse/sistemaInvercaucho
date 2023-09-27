@@ -1,9 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("formulario").addEventListener('submit', validarFormulario);
-});
+
+
+
 
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+
+if (formulario) {
+    formulario.addEventListener('submit', validarFormulario);
+}
 
     var nombre = parent.document.getElementById('nombre').value;    
     var rif = parent.document.getElementById("rif").value;

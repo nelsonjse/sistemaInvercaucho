@@ -30,11 +30,12 @@ $(document).ready(function () {
         $.ajax({
             url: '?pagina=roles/mostrar&id=' + rolId, 
             method: 'POST',
-            data: { id: rolId },
+            data: { id: rolId }, 
             dataType: 'json',
             success: function (data) {
                 
                 $('#formulario #descripcion').val(data.descripcion);
+                
                 
             },
             error: function () {
@@ -51,7 +52,7 @@ $(document).ready(function () {
     $('.CerrarModal2').on('click', function (event) {
         $('#modal-actualizar').modal('hide');
     
-     });
+     }); 
 
     $('#formulario').submit(function (event) {
         event.preventDefault();         
@@ -61,7 +62,8 @@ $(document).ready(function () {
             method: 'POST',
             data: formData, 
             success: function (response) {
-               console.log('Respuesta del controlador:', response);
+                $('#modal-actualizar').modal('hide');
+                window.location.href = '?pagina=roles';
             },
             error: function () {
                 alert('Error al enviar los datos al controlador');

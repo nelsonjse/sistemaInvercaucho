@@ -68,7 +68,7 @@ require("vista/accesorios/error.php");
         
     }
 
-      function guardar() 
+      function guardar()  
     {
         $producto = new productos();
 

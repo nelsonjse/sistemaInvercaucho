@@ -61,7 +61,7 @@ require("vista/accesorios/error.php");
             "direccion" => $_POST["direccion"],
         ]);
 
-        redirect("proveedores");
+        
     }catch(Exception $e){
             
         $mensaje = "error";   

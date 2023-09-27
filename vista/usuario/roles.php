@@ -47,7 +47,7 @@
                 <?php if (isset($values->roles[0])): ?>
             <?php foreach ($values->roles as $rol): ?>
                     <tr>
-                        <td class="align-middle"><?= $rol->descripcion?></td>                        
+                        <td class="align-middle"><?= $rol->descripcion?></td>                         
                         <td class="align-middle">
                             <ul class="nk-tb-actions gx-1">
                                 <ul class="link-list-opt no-bdr">

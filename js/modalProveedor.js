@@ -14,11 +14,11 @@
 //     modal.style.display = 'none';
 // });
 
-window.addEventListener('click', function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-});
+// window.addEventListener('click', function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = 'none';
+//     }
+// });
 
 
 $(document).ready(function () {
@@ -46,10 +46,10 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 
-                $('#formulario #nombre').val(data.nombre);
-                $('#formulario #rif').val(data.rif);
-                $('#formulario #telefono').val(data.telefono);
-                $('#formulario #direccion').val(data.direccion);
+                $('#formularioActualizar #nombre2').val(data.nombre);
+                $('#formularioActualizar #rif2').val(data.rif);
+                $('#formularioActualizar #telefono2').val(data.telefono);
+                $('#formularioActualizar #direccion2').val(data.direccion);
                 
             },
             error: function () {
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
         
         $('#modal-actualizar').modal('show');
-        
+       
        
     });
 
@@ -80,6 +80,10 @@ $(document).ready(function () {
             data: formData, 
             success: function (response) {
                console.log('Respuesta del controlador:', response);
+               window.location.href = '?pagina=proveedores';
+               
+            
+            
             },
             error: function () {
                 alert('Error al enviar los datos al controlador');

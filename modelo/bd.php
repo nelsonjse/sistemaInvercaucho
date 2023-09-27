@@ -4,7 +4,7 @@ class bd {
     // DESARROLLO
 
 	private $ip = "localhost";      
-    private $bd = "invercauchos";
+    private $bd = "invercauchosTrayecto3";
     private $usuario = "root";
     private $contrasena = "";
 

@@ -168,42 +168,43 @@
             </div>
 
             <div class="modal-body">
-                <form action="?pagina=proveedores/actualizar" method="POST" id="formulario">
+                <form action="?pagina=proveedores/actualizar" method="POST" id="formularioActualizar">
                     <input type="hidden" name="proveedor_id" id="proveedor_id" value="">
                     <div class="form-row">
                         <div class="col-6 ">
                             <label for="nombre" class="col-8 col-form-label">Nombre</label>
-                            <input type="text"  class="form-control" id="nombre" name="nombre" placeholder="Ingresar nombre">
-                            <p class="text-danger" id="responseNombre"></p>
+                            <input type="text"  class="form-control" id="nombre2" name="nombre" placeholder="Ingresar nombre">
+                            <p class="text-danger" id="responseNombre2"></p>
                         </div>            
                         <div class="col-6">
                             <label for="rif" class="col-6 col-form-label">Rif</label>
-                            <input type="text"  class="form-control" id="rif" name="rif" placeholder="Ingresar Rif">
-                            <p class="text-danger" id="responseRif"></p>
+                            <input type="text"  class="form-control" id="rif2" name="rif" placeholder="Ingresar Rif">
+                            <p class="text-danger" id="responseRif2"></p>
                         </div>
                         <div class="col-6">
                             <label for="telefono" class="col-6 col-form-label">Telefono</label>
-                            <input type="text"  class="form-control" id="telefono" name="telefono" placeholder="Ingresar telefono">
-                            <p class="text-danger" id="responseTelefono"></p>
+                            <input type="text"  class="form-control" id="telefono2" name="telefono" placeholder="Ingresar telefono">
+                            <p class="text-danger" id="responseTelefono2"></p>
                         </div>
                         <div class="col-6">
                             <label for="direccion" class="col-6 col-form-label">Direccion</label>
-                            <input type="text"  class="form-control" id="direccion" name="direccion" placeholder="Ingresar direccion">
-                            <p class="text-danger" id="responseDireccion"></p>
+                            <input type="text"  class="form-control" id="direccion2" name="direccion" placeholder="Ingresar direccion">
+                            <p class="text-danger" id="responseDireccion2"></p>
                         </div>
 
                     </div>
             </div>
-            <div class="modal-footer" style="border: none;>
+            <div class="modal-footer" style="border: none;">
                         <div class="row">
                             <div class="col">
                                 <button type="submit" class="btn btn-primary" name="accion" value="actualizar">Actualizar</button>
                                 <button type="button" id="closeModalBtn2" class="CerrarModal2 btn btn-danger" name="accion" value="Cancelar">Volver a Lista</button>
-                                <p class="text-danger" id="mensaje"></p>
+                                <p class="text-danger" id="mensaje2"></p>
                             </div>
                         </div>
                 </form>
             </div>
+            <script type="text/javascript" src="js/proveedoresActualizar.js"></script> 
         </div>
     </div>
     
