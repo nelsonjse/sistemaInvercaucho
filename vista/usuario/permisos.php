@@ -21,16 +21,11 @@
                                 
                                 <div class="form-group list-inline-item ml-4 mr-4">
                                 <input type="checkbox" class="custom-control-input" id="<?=$permiso->id?>" name="permisos[]" value="<?=$permiso->id?>" <?php echo isset($values->asignados->{$permiso->id}) ? 'checked' : '' ?>>
-                                <label class="custom-control-label" for="<?=$permiso->id?>"><span class="tb-lead">  <b><?php echo $permiso->permiso?></b> </span></label>
+                                <label class="custom-control-label" for="<?=$permiso->id?>"><span class="tb-lead">  <b><?php  echo $permiso->permiso?></b> </span></label>
                                                 
                                 </div>
-                               
-                                               
                                 
                                 
-
-                                
-                                <!-- </div> -->
                             <?php endforeach; ?>
                         <?php endif; ?>
                         <input type="hidden" name="id_usuario" value=" <?php echo $values->usuario->id; ?>">

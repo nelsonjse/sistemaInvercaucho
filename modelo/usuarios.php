@@ -159,16 +159,16 @@ class usuarios extends bd {
         
     }
 
-    public function verificarPermiso(int $id_user, string $nombre){
+    // public function verificarPermiso(int $id_user, string $nombre){
 
-        $conexion = $this->conexion();
-        $sql = $conexion->prepare("SELECT permisos.id, permisos.permiso, detalle_permisos.id_usuario, detalle_permisos.id_permiso FROM permisos  INNER JOIN detalle_permisos  ON permisos.id = detalle_permisos.id_permiso WHERE detalle_permisos.id_usuario = $id_user AND permisos.permiso = '$nombre'");
+    //     $conexion = $this->conexion();
+    //     $sql = $conexion->prepare("SELECT permisos.id, permisos.permiso, detalle_permisos.id_usuario, detalle_permisos.id_permiso FROM permisos  INNER JOIN detalle_permisos  ON permisos.id = detalle_permisos.id_permiso WHERE detalle_permisos.id_usuario = $id_user AND permisos.permiso = '$nombre'");
 
-        $sql->execute();
-        $this->data = $sql->fetchAll();
-        return $this;
+    //     $sql->execute();
+    //     $this->data = $sql->fetchAll();
+    //     return $this;
 
-    }
+    // }
 
        
     public function get(){

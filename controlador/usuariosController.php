@@ -17,9 +17,9 @@ require("vista/accesorios/error.php");
         $usuario = new usuarios();
         $id_user = $_SESSION['id'];
         $id_rol = $_SESSION['rol'];
-        $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
+        // $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
 
-        if(!empty($verificar) || $id_rol == 2){
+        // if(!empty($verificar) || $id_rol == 2){
         try{
         $usuario = new usuarios();
         $usuarios = $usuario->listar()->get(); 
@@ -32,10 +32,10 @@ require("vista/accesorios/error.php");
             $mensaje = "listar";   
             error($mensaje);
         }
-        }else{
-        $mensaje = "Acceso Denegado";   
-        error($mensaje);        
-        }  
+        // }else{
+        // $mensaje = "Acceso Denegado";   
+        // error($mensaje);        
+        // }  
     }
 
       function crear()
@@ -43,7 +43,7 @@ require("vista/accesorios/error.php");
         $usuario = new usuarios();
         $id_user = $_SESSION['id'];
         $id_rol = $_SESSION['rol'];
-        $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
+        // $verificar = $usuario->verificarPermiso($id_user, 'mantenimiento')->get(); 
 
         if(!empty($verificar) || $id_rol == 2){
         $usuario = new usuarios();
@@ -179,7 +179,7 @@ require("vista/accesorios/error.php");
 
     
     
-    function registrarPermiso(){
+    function registrarPermiso(){ 
         $usuario = new usuarios();
         $msg = '';
         $id_user = $_POST['id_usuario'];

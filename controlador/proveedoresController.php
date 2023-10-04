@@ -11,6 +11,7 @@ require("vista/accesorios/error.php");
         $proveedor = new proveedor();
         $id_user = $_SESSION['id'];
         $id_rol = $_SESSION['rol'];
+        
         $verificar = $proveedor->verificarPermiso($id_user, 'proveedor')->get(); 
 
         if(!empty($verificar) || $id_rol == 2){

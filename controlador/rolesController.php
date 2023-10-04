@@ -10,7 +10,7 @@ require("vista/accesorios/error.php");
         $rol = new rol();
         $id_user = $_SESSION['id'];
         $id_rol = $_SESSION['rol'];
-        $verificar = $rol->verificarPermiso($id_user, 'rol')->get(); 
+        // $verificar = $rol->verificarPermiso($id_user, 'rol')->get(); 
 
         if(!empty($verificar) || $id_rol == 2){
             try{
